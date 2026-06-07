@@ -1,0 +1,63 @@
+<div class="tab-content">
+  <h2 class="section-title">User Management</h2>
+  <div class="card">
+    <h3>All Users</h3>
+    <div class="controls">
+      <label>
+        Filter by Role:
+        <input [(ngModel)]="selectedRole" placeholder="e.g., STUDENT" />
+      </label>
+      <label>
+        Sort by:
+        <select [(ngModel)]="sortField">
+          <option value="id">ID</option>
+          <option value="name">First Name</option>
+          <option value="lastName">Last Name</option>
+        </select>
+      </label>
+      <button (click)="sortAscending = !sortAscending">
+        Sort {{ sortAscending ? '↑' : '↓' }}
+      </button>
+    </div>
+    <div *ngIf="filteredAndSortedUsers.length === 0" class="no-data">
+      No users found matching your filters.
+    </div>
+    <table *ngIf="filteredAndSortedUsers.length > 0" class="data-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of filteredAndSortedUsers">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }} {{ user.lastName }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <span>{{ (user.role?.name || '')?.replace('ROLE_', '') || 'No Role' }}</span>
+        </td>
+        <td>
+          <button class="btn-small" (click)="startEditUser(user)">Edit</button>
+          <a>&nbsp;</a>
+          <button class="btn-small btn-danger" (click)="deleteUser(user)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <br>
+    <button (click)="startAddUser()">Add New Admin</button>
+  </div>
+
+  <app-user-form
+    *ngIf="addingUser || editingUser"
+    [editingUser]="editingUser"
+    (save)="handleSaveUser($event)"
+    (cancel)="handleCancelUser()"
+  ></app-user-form>
+</div>

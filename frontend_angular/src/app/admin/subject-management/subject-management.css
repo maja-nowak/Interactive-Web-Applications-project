@@ -1,0 +1,100 @@
+.section-title {
+  font-size: 28px;
+  margin-bottom: 32px;
+  font-weight: 700;
+  color: #495057;
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #ab2298;
+  border-radius: 2px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 20px;
+  padding: 32px;
+  margin-bottom: 40px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  border-color: #ab2298;
+  background: #faf6fb;
+}
+
+.card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #495057;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e9ecef;
+  position: relative;
+}
+
+.card h3::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #ab2298;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 16px;
+  border: 2px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.teacher-assignment {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  margin: 16px 0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.teacher-assignment:hover {
+  border-color: #ab2298;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}

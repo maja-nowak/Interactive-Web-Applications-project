@@ -1,0 +1,178 @@
+.section-title {
+  font-size: 28px;
+  margin-bottom: 24px;
+  font-weight: 700;
+  color: #495057;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #ab2298;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.card {
+  background: #fff;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+.card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #495057;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.card h3::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: #ab2298;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 15px;
+  background: #fff;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #ab2298;
+}
+
+button {
+  padding: 12px 20px;
+  background: #ab2298;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+button:hover:not(:disabled) {
+  background: #8a1e7b;
+}
+
+button:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-small {
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+}
+
+.btn-danger {
+  background: #dc3545;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #a71e2a;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 16px;
+  border-bottom: 2px solid #e9ecef;
+  text-align: left;
+}
+
+.data-table th {
+  background: #ab2298;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.data-table tbody tr:hover {
+  background: #faf6fb;
+}
+
+.no-data {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+  padding: 30px 16px;
+  font-size: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.controls label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  text-transform: uppercase;
+}

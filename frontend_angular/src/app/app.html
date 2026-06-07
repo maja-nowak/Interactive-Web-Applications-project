@@ -1,0 +1,25 @@
+<main class="main">
+  <div class="content">
+    <div class="center-side">
+
+      @if (!isLoggedIn) {
+        <div class="welcome-row">
+          <h1>Welcome!</h1>
+          <div class="welcome-row-navi">
+            <a routerLink="auth/login">Login</a> |
+            <a routerLink="auth/register">Register</a>
+          </div>
+        </div>
+      }
+
+      @if (isLoggedIn) {
+        <div class="welcome-row">
+          <h1>Welcome! <br> You are logged in as: {{ this.username }}</h1>
+          <button class="logout-btn" (click)="logout()">Logout</button>
+        </div>
+      }
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>

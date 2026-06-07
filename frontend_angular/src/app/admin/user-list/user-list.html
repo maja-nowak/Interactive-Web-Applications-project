@@ -1,0 +1,38 @@
+<div class="tab-content">
+  <h2 class="section-title">{{ title }}</h2>
+  <div class="card">
+    <h3>All {{ userType }}s</h3>
+    <div *ngIf="users.length === 0" class="no-data">
+      No {{ userType.toLowerCase() }}s found in the system.
+    </div>
+    <table *ngIf="users.length > 0" class="data-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th *ngIf="showSubjects">Subjects</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td *ngIf="showSubjects">
+          <div *ngFor="let subject of getUserSubjects(user.id ?? 0)">
+            {{ subject.name }}
+          </div>
+          <div *ngIf="getUserSubjects(user.id ?? 0).length === 0">
+                  No subjects assigned
+                </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

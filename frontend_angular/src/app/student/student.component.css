@@ -1,0 +1,130 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #495057;
+  min-height: 100vh;
+}
+
+.student-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.student-header {
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 24px;
+}
+
+.student-header p {
+  font-size: 28px;
+  font-weight: 700;
+  color: #495057;
+  margin: 0;
+}
+
+.section {
+  margin-bottom: 32px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid #e9ecef;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 16px;
+  color: #495057;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+  font-weight: 700;
+}
+
+.no-data {
+  background: #fecaca;
+  color: #dc3545;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-style: italic;
+  border: 2px solid #fecaca;
+  text-align: center;
+  font-weight: 500;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.data-table thead {
+  background: #ab2298;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.data-table th {
+  background: #ab2298;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.data-table tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.data-table td strong {
+  color: #495057;
+  font-weight: 600;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  background: #ab2298;
+  color: white;
+  text-transform: uppercase;
+}
+
+button:hover:not(:disabled) {
+  background: #8a1e7b;
+}
+
+button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.btn-success {
+  background: #28a745;
+}
+
+.btn-success:hover:not(:disabled) {
+  background: #155724;
+}
+
+.btn-small {
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+}

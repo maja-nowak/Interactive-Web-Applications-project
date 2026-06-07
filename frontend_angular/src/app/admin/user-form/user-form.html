@@ -1,0 +1,92 @@
+<div class="card">
+  <h3>{{ editingUser ? 'Edit User' : 'Create New Admin' }}</h3>
+  <form #form="ngForm" (ngSubmit)="form.valid && onSave()">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="userName">First Name</label>
+        <input
+          type="text"
+          id="userName"
+          name="name"
+          [(ngModel)]="userForm.name"
+          #name="ngModel"
+          required />
+        <div *ngIf="name.invalid && name.touched" class="error-message">
+          First name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="userLastName">Last Name</label>
+        <input
+          type="text"
+          id="userLastName"
+          name="lastName"
+          [(ngModel)]="userForm.lastName"
+          #lastName="ngModel"
+          required />
+        <div *ngIf="lastName.invalid && lastName.touched" class="error-message">
+          Last name is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="userUsername">Username</label>
+        <input
+          type="text"
+          id="userUsername"
+          name="username"
+          [(ngModel)]="userForm.username"
+          #username="ngModel"
+          required
+          minlength="3"
+          maxlength="50" />
+        <div *ngIf="username.invalid && username.touched" class="error-message">
+          Username must be between 3–50 characters.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="userEmail">Email</label>
+        <input
+          type="email"
+          id="userEmail"
+          name="email"
+          [(ngModel)]="userForm.email"
+          #email="ngModel"
+          required
+          email />
+        <div *ngIf="email.invalid && email.touched" class="error-message">
+          Valid email is required.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row" *ngIf="!editingUser">
+      <div class="form-group">
+        <label for="userPassword">Password</label>
+        <input
+          type="password"
+          id="userPassword"
+          name="password"
+          [(ngModel)]="userForm.password"
+          #password="ngModel"
+          required
+          minlength="6"
+          maxlength="40" />
+        <div *ngIf="password.invalid && password.touched" class="error-message">
+          Password must be 6–40 characters.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <button type="submit" [disabled]="form.invalid">
+        {{ editingUser ? 'Update User' : 'Create User' }}
+      </button>
+      <button type="button" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

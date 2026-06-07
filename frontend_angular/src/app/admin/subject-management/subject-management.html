@@ -1,0 +1,21 @@
+<div class="tab-content">
+  <h2 class="section-title">Subject Management</h2>
+
+  <app-subject-form
+    [editingSubject]="editingSubject"
+    [teachers]="teachers"
+    [errorMessage]="errorMessage"
+    (save)="onSaveSubject($event)"
+    (cancel)="onCancelEdit()"
+    (createNew)="onStartCreate()">
+  </app-subject-form>
+
+  <app-subject-list
+    [subjects]="subjects"
+    [teachers]="teachers"
+    (edit)="onStartEdit($event)"
+    (delete)="onDeleteSubject($event)"
+    (assignTeacher)="onAssignTeacher($event)"
+    (removeTeacher)="onRemoveTeacher($event)">
+  </app-subject-list>
+</div>

@@ -1,0 +1,49 @@
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
+  <div class="form-group">
+    <input formControlName="username" placeholder="Username">
+    <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="error-message">
+      Username is required (3-50 characters)
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input formControlName="password" type="password" placeholder="Password">
+    <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-message">
+      Password is required (6-40 characters)
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input formControlName="name" placeholder="First Name">
+    <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="error-message">
+      First name is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input formControlName="lastName" placeholder="Last Name">
+    <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="error-message">
+      Last name is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input formControlName="email" placeholder="Email" type="email">
+    <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-message">
+      Valid email is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <select formControlName="role">
+      <option value="ROLE_STUDENT">Student</option>
+      <option value="ROLE_TEACHER">Teacher</option>
+    </select>
+    <div *ngIf="registerForm.get('role')?.invalid && registerForm.get('role')?.touched" class="error-message">
+      Role is required
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="registerForm.invalid">Register</button>
+</form>
+

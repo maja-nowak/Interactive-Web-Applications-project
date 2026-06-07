@@ -1,0 +1,45 @@
+<div class="admin-container">
+  <div class="admin-header">
+    <h1>Admin Panel</h1>
+  </div>
+
+  <app-stats-card
+    [students]="students"
+    [teachers]="teachers"
+    [subjects]="subjects"
+    [users]="users">
+  </app-stats-card>
+
+  <app-tab-navigation
+    [activeTab]="activeTab"
+    (tabChanged)="onTabChanged($event)">
+  </app-tab-navigation>
+
+  <app-subject-management
+    *ngIf="activeTab === 'subjects'"
+    [subjects]="subjects"
+    [teachers]="teachers"
+    (subjectsChanged)="loadSubjects()">
+  </app-subject-management>
+
+  <app-user-list
+    *ngIf="activeTab === 'students'"
+    [users]="students"
+    [userType]="'Student'"
+    [title]="'Student Management'">
+  </app-user-list>
+
+  <app-user-list
+    *ngIf="activeTab === 'teachers'"
+    [users]="teachers"
+    [subjects]="subjects"
+    [userType]="'Teacher'"
+    [title]="'Teacher Management'">
+  </app-user-list>
+
+  <app-user-management
+    *ngIf="activeTab === 'users'"
+    [users]="users"
+    (usersChanged)="onUsersChanged()">
+  </app-user-management>
+</div>

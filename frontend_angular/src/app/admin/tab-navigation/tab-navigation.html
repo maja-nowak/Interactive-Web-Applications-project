@@ -1,0 +1,26 @@
+<div class="tabs">
+  <button
+    class="tab"
+    [ngClass]="{ active: activeTab === 'subjects' }"
+    (click)="selectTab('subjects')">
+    Subjects
+  </button>
+  <button
+    class="tab"
+    [ngClass]="{ active: activeTab === 'students' }"
+    (click)="selectTab('students')">
+    Students
+  </button>
+  <button
+    class="tab"
+    [ngClass]="{ active: activeTab === 'teachers' }"
+    (click)="selectTab('teachers')">
+    Teachers
+  </button>
+  <button
+    class="tab"
+    [ngClass]="{ active: activeTab === 'users' }"
+    (click)="selectTab('users')">
+    Users
+  </button>
+</div>

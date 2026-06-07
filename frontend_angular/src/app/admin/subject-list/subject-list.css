@@ -1,0 +1,91 @@
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 14px;
+  background: #fff;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px 16px;
+  border-bottom: 2px solid #e9ecef;
+  text-align: left;
+}
+
+.data-table th {
+  background: #ab2298;
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.data-table tbody tr:hover {
+  background: #faf6fb;
+}
+
+.data-table thead {
+  background: #ab2298;
+}
+
+.no-data {
+  color: #6c757d;
+  font-style: italic;
+  text-align: center;
+  padding: 30px 16px;
+  font-size: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px dashed #dee2e6;
+}
+
+button, .btn-small {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  background: #ab2298;
+  color: white;
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+
+button:last-child, .btn-small:last-child {
+  margin-right: 0;
+}
+
+button:hover:not(:disabled), .btn-small:hover:not(:disabled) {
+  background: #8a1e7b;
+}
+
+button:disabled, .btn-small:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn-danger {
+  background: #dc3545;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: #a71e2a;
+}
+
+input, select {
+  width: 50%;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #ab2298;
+}

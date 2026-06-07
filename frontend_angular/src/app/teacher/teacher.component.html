@@ -1,0 +1,43 @@
+<h2>Your subjects</h2>
+
+<ul class="subject-list">
+  <li *ngFor="let subject of subjects">
+    <div>
+      <strong>{{ subject.name }}</strong>
+    </div>
+    <div>
+      <button (click)="loadEnrollments(subject.id || 0)">View Enrollments</button>
+      <button (click)="stopTeaching(subject.id || 0)">Stop Teaching</button>
+    </div>
+  </li>
+</ul>
+
+<div *ngIf="enrollments.length > 0" class="section">
+  <h2>Enrolled Students</h2>
+  <table class="data-table">
+    <thead>
+    <tr>
+      <th>Student</th>
+      <th>Grade</th>
+      <th>Assign Grade</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let enrollment of enrollments">
+      <td>{{ enrollment.student.firstName }} {{ enrollment.student.lastName }}</td>
+      <td>{{ enrollment.grade !== null ? enrollment.grade : 'Not graded' }}</td>
+      <td>
+        <input
+          type="number"
+          [(ngModel)]="enrollment.grade"
+          min="2"
+          max="5"
+          step="0.5"
+        />
+        <a>&nbsp;&nbsp;</a>
+        <button (click)="assignGrade(enrollment.id, enrollment.grade || 0)">Save</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
